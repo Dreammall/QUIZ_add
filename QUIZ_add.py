@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[81]:
+# In[98]:
 
 
 O = 1
@@ -18,9 +18,10 @@ print("------------------------------")
     
     
 plist = [2,3,4,6,7,8]
+# P ,M は L,G に等しくない
 for P in plist:
     M = 10 - P
-    if(P != L or P != G or M != L or M != G ):
+    if(P != L and M != L and P != G and M != G ):
          print("Mの値")
          print(M)
          print("Pの値")
@@ -28,30 +29,31 @@ for P in plist:
          print("  ")
 print("------------------------------")
         
+# E はL,G,P,M に等しくない
 print("Eの値")
 for E in range(2,10):
-    if(E != L or E != G or E != P or E != M ):
+    if(E != L and E != G and E != L  and M != G  ):
         print(E)
 print("------------------------------")
 
-pe1 = P+E+1
 
-if(pe1 >= 10):
-    A = pe1-10
+if((P+E+1) >= 10):
+    A = P+E+1-10
     if((A+L+1) >= 10):
         R = A+L+1-10
-else:
-    A = pe1
+elif((P+E+1) < 10):
+    A = P+E+1
     if((A+L) >= 10):
         R = A+L-10
 
 print("Aの値")
-if(A != O  or A != N or A != L or A != G or A != P or  A != M or A != E):
+
+if(A != O  and A != N and A != E):
     print(A)
 print("------------------------------")
 
 print("Rの値")
-if(R != O  or R != N or R != L or R != G or R != P and  R != M or R != E or R != A):
+if(R != A):
     print(R)
 
 
